@@ -1,0 +1,11 @@
+# ComplexObjectData
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `animal`                                                                          | list[[Animals](../../models/shared/animals.md)]                                   | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `birds`                                                                           | [Optional[ComplexObjectDataBirds]](../../models/shared/complexobjectdatabirds.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `created_date`                                                                    | *Optional[Any]*                                                                   | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `updated_date`                                                                    | *Optional[Any]*                                                                   | :heavy_minus_sign:                                                                | N/A                                                                               |
