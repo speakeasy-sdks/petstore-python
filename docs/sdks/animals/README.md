@@ -1,4 +1,4 @@
-# animals
+# Animals
 
 ## Overview
 

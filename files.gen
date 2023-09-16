@@ -24,8 +24,8 @@ src/pb/models/shared/error.py
 src/pb/models/shared/animals.py
 src/pb/models/shared/complexobject.py
 src/pb/models/shared/pagination.py
-src/pb/models/shared/birds.py
 src/pb/models/shared/nestedbird.py
+src/pb/models/shared/birds.py
 src/pb/models/shared/__init__.py
 src/pb/models/errors/__init__.py
 docs/sdks/pb/README.md
@@ -41,13 +41,6 @@ docs/models/operations/deleteanimalsbyidresponse.md
 docs/models/operations/getallanimalsrequest.md
 docs/models/operations/getallanimalsresponse.md
 docs/models/operations/getalllivingthingsrequest.md
-docs/models/operations/getalllivingthings200applicationjson2meta2pagination.md
-docs/models/operations/getalllivingthings200applicationjson2meta2.md
-docs/models/operations/getalllivingthings200applicationjson2meta1.md
-docs/models/operations/getalllivingthings200applicationjson2.md
-docs/models/operations/getalllivingthings200applicationjson1metapagination.md
-docs/models/operations/getalllivingthings200applicationjson1meta.md
-docs/models/operations/getalllivingthings200applicationjson1.md
 docs/models/operations/getalllivingthingsresponse.md
 docs/models/operations/getanimalsbyidsecurity.md
 docs/models/operations/getanimalsbyidrequest.md
@@ -66,7 +59,6 @@ docs/models/shared/complexobjectdata.md
 docs/models/shared/complexobjectmeta2.md
 docs/models/shared/complexobject.md
 docs/models/shared/pagination.md
-docs/models/shared/birds.md
 docs/models/shared/nestedbirdageunit.md
 docs/models/shared/nestedbirdage.md
 docs/models/shared/nestedbirdflightwingsspan.md
@@ -75,4 +67,5 @@ docs/models/shared/nestedbirdflight.md
 docs/models/shared/nestedbirdlocationgeography.md
 docs/models/shared/nestedbirdlocation.md
 docs/models/shared/nestedbird.md
+docs/models/shared/birds.md
 .gitattributes
