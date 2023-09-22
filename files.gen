@@ -26,13 +26,10 @@ src/pb/models/shared/complexobject.py
 src/pb/models/shared/pagination.py
 src/pb/models/shared/nestedbird.py
 src/pb/models/shared/birds.py
+src/pb/models/shared/security.py
 src/pb/models/shared/__init__.py
 src/pb/models/errors/__init__.py
-docs/sdks/pb/README.md
-docs/sdks/animals/README.md
-docs/sdks/birds/README.md
 USAGE.md
-docs/models/operations/createanimalsecurity.md
 docs/models/operations/createanimalrequestbody.md
 docs/models/operations/createanimalresponse.md
 docs/models/operations/createlivingthingsresponse.md
@@ -42,10 +39,8 @@ docs/models/operations/getallanimalsrequest.md
 docs/models/operations/getallanimalsresponse.md
 docs/models/operations/getalllivingthingsrequest.md
 docs/models/operations/getalllivingthingsresponse.md
-docs/models/operations/getanimalsbyidsecurity.md
 docs/models/operations/getanimalsbyidrequest.md
 docs/models/operations/getanimalsbyidresponse.md
-docs/models/operations/updateanimalsbyidsecurity.md
 docs/models/operations/updateanimalsbyidrequest.md
 docs/models/operations/updateanimalsbyidresponse.md
 docs/models/operations/createnewbird200applicationjsonmeta.md
@@ -68,4 +63,8 @@ docs/models/shared/nestedbirdlocationgeography.md
 docs/models/shared/nestedbirdlocation.md
 docs/models/shared/nestedbird.md
 docs/models/shared/birds.md
+docs/models/shared/security.md
+docs/sdks/pb/README.md
+docs/sdks/animals/README.md
+docs/sdks/birds/README.md
 .gitattributes

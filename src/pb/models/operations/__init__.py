@@ -10,4 +10,4 @@ from .get_all_living_things import *
 from .get_animals_by_id import *
 from .update_animals_by_id import *
 
-__all__ = ["CreateAnimalRequestBody","CreateAnimalResponse","CreateAnimalSecurity","CreateLivingThingsResponse","CreateNewBird200ApplicationJSON","CreateNewBird200ApplicationJSONMeta","CreateNewBirdResponse","DeleteAnimalsByIDRequest","DeleteAnimalsByIDResponse","GetAllAnimalsRequest","GetAllAnimalsResponse","GetAllBirdsResponse","GetAllLivingThingsRequest","GetAllLivingThingsResponse","GetAnimalsByIDRequest","GetAnimalsByIDResponse","GetAnimalsByIDSecurity","UpdateAnimalsByIDRequest","UpdateAnimalsByIDResponse","UpdateAnimalsByIDSecurity"]
+__all__ = ["CreateAnimalRequestBody","CreateAnimalResponse","CreateLivingThingsResponse","CreateNewBird200ApplicationJSON","CreateNewBird200ApplicationJSONMeta","CreateNewBirdResponse","DeleteAnimalsByIDRequest","DeleteAnimalsByIDResponse","GetAllAnimalsRequest","GetAllAnimalsResponse","GetAllBirdsResponse","GetAllLivingThingsRequest","GetAllLivingThingsResponse","GetAnimalsByIDRequest","GetAnimalsByIDResponse","UpdateAnimalsByIDRequest","UpdateAnimalsByIDResponse"]

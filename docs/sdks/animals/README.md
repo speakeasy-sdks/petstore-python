@@ -22,20 +22,22 @@ Post animals description
 
 ```python
 import pb
-from pb.models import operations
+from pb.models import operations, shared
 
-s = pb.Pb()
-
-req = operations.CreateAnimalRequestBody(
-    age=870013,
-    color='at',
-    id='f7cc78ca-1ba9-428f-8816-742cb7392059',
-    name='Sheryl Fadel',
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
 )
 
-res = s.animals.create_animal(req, operations.CreateAnimalSecurity(
-    key1="",
-))
+req = operations.CreateAnimalRequestBody(
+    age=943749,
+    color='saepe',
+    id='a7596eb1-0faa-4a23-92c5-955907aff1a3',
+    name='Carlos Ziemann',
+)
+
+res = s.animals.create_animal(req)
 
 if res.animals is not None:
     # handle response
@@ -46,7 +48,6 @@ if res.animals is not None:
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `request`                                                                                | [operations.CreateAnimalRequestBody](../../models/operations/createanimalrequestbody.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.CreateAnimalSecurity](../../models/operations/createanimalsecurity.md)       | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
 
 
 ### Response
@@ -64,33 +65,37 @@ Create a living thing
 import pb
 from pb.models import shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = shared.ComplexObject(
     data=shared.ComplexObjectData(
         animal=[
             shared.Animals(
-                age=943749,
-                color='saepe',
-                id='a7596eb1-0faa-4a23-92c5-955907aff1a3',
-                name='Carlos Ziemann',
+                age=253291,
+                color='commodi',
+                id='7739251a-a52c-43f5-ad01-9da1ffe78f09',
+                name='Ms. Karla Aufderhar',
             ),
         ],
         birds=shared.ComplexObjectDataBirds(
             food=[
-                'numquam',
+                'maiores',
             ],
-            id='67739251-aa52-4c3f-9ad0-19da1ffe78f0',
-            name='Mr. Jared Ritchie',
+            id='15471b5e-6e13-4b99-9488-e1e91e450ad2',
+            name='Rudy Spencer',
         ),
-        created_date=979587,
-        updated_date=359444,
+        created_date=397821,
+        updated_date=5528.22,
     ),
     meta=shared.Pagination(
         has_more=False,
-        page_number=480894,
+        page_number=164940,
     ),
-    name='Maryann Hamill',
+    name='Vernon Abshire',
 )
 
 res = s.animals.create_living_things(req)
@@ -119,12 +124,16 @@ Delete the animal
 
 ```python
 import pb
-from pb.models import operations
+from pb.models import operations, shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = operations.DeleteAnimalsByIDRequest(
-    id='e13b99d4-88e1-4e91-a450-ad2abd442698',
+    id='94bb4f63-c969-4e9a-befa-77dfb14cd66a',
 )
 
 res = s.animals.delete_animals_by_id(req)
@@ -153,15 +162,19 @@ Get Animals Description
 
 ```python
 import pb
-from pb.models import operations
+from pb.models import operations, shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = operations.GetAllAnimalsRequest(
-    age='perferendis',
-    color='magni',
-    id='d502a94b-b4f6-43c9-a9e9-a3efa77dfb14',
-    name='Irving Jenkins',
+    age='accusamus',
+    color='non',
+    id='95efb9ba-88f3-4a66-9970-74ba4469b6e2',
+    name='Danielle Bosco',
 )
 
 res = s.animals.get_all_animals(req)
@@ -190,13 +203,17 @@ get All living things data
 
 ```python
 import pb
-from pb.models import operations
+from pb.models import operations, shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = operations.GetAllLivingThingsRequest(
     filter=[
-        'accusamus',
+        'provident',
     ],
 )
 
@@ -228,22 +245,24 @@ Get an animal
 import pb
 from pb.models import operations, shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = operations.GetAnimalsByIDRequest(
     animals=shared.Animals(
-        age=249796,
-        color='occaecati',
-        id='5efb9ba8-8f3a-4669-9707-4ba4469b6e21',
-        name='Frances Marks',
+        age=551816,
+        color='sint',
+        id='0afa563e-2516-4fe4-88b7-11e5b7fd2ed0',
+        name='Irma Morissette DDS',
     ),
-    id='890afa56-3e25-416f-a4c8-b711e5b7fd2e',
-    per_page=868126,
+    id='ddc69260-1fb5-476b-8d5f-0d30c5fbb258',
+    per_page=489549,
 )
 
-res = s.animals.get_animals_by_id(req, operations.GetAnimalsByIDSecurity(
-    key1="",
-))
+res = s.animals.get_animals_by_id(req)
 
 if res.animals is not None:
     # handle response
@@ -251,10 +270,9 @@ if res.animals is not None:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.GetAnimalsByIDRequest](../../models/operations/getanimalsbyidrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.GetAnimalsByIDSecurity](../../models/operations/getanimalsbyidsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetAnimalsByIDRequest](../../models/operations/getanimalsbyidrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -272,21 +290,23 @@ Update the animal object
 import pb
 from pb.models import operations, shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = operations.UpdateAnimalsByIDRequest(
     animals=shared.Animals(
-        age=37559,
-        color='consequuntur',
-        id='8921cddc-6926-401f-b576-b0d5f0d30c5f',
-        name='Robin D'Amore',
+        age=54338,
+        color='quis',
+        id='3202c73d-5fe9-4b90-8289-09b3fe49a8d9',
+        name='Randolph Wintheiser',
     ),
-    id='7053202c-73d5-4fe9-b90c-28909b3fe49a',
+    id='633323f9-b77f-43a4-9006-74ebf69280d1',
 )
 
-res = s.animals.update_animals_by_id(req, operations.UpdateAnimalsByIDSecurity(
-    key1="",
-))
+res = s.animals.update_animals_by_id(req)
 
 if res.animals is not None:
     # handle response
@@ -294,10 +314,9 @@ if res.animals is not None:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.UpdateAnimalsByIDRequest](../../models/operations/updateanimalsbyidrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.UpdateAnimalsByIDSecurity](../../models/operations/updateanimalsbyidsecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.UpdateAnimalsByIDRequest](../../models/operations/updateanimalsbyidrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response

@@ -10,14 +10,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class UpdateAnimalsByIDSecurity:
-    key1: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'oauth2', 'field_name': 'Authorization' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class UpdateAnimalsByIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     animals: Optional[shared_animals.Animals] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})

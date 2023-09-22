@@ -5,6 +5,7 @@ from .animals import Animals
 from .birds import Birds
 from .sdkconfiguration import SDKConfiguration
 from pb import utils
+from pb.models import shared
 
 class Pb:
     r"""Petstore: REST API for interfacing with Petstore.
@@ -18,6 +19,7 @@ class Pb:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
+                 security: shared.Security = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -26,6 +28,8 @@ class Pb:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
+        :param security: The security details required for authentication
+        :type security: shared.Security
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -40,7 +44,7 @@ class Pb:
         if client is None:
             client = requests_http.Session()
         
-        security_client = client
+        security_client = utils.configure_security_client(client, security)
         
         if server_url is not None:
             if url_params is not None:

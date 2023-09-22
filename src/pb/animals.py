@@ -13,7 +13,7 @@ class Animals:
         self.sdk_configuration = sdk_config
         
     
-    def create_animal(self, request: operations.CreateAnimalRequestBody, security: operations.CreateAnimalSecurity) -> operations.CreateAnimalResponse:
+    def create_animal(self, request: operations.CreateAnimalRequestBody) -> operations.CreateAnimalResponse:
         r"""create an animal
         Post animals description
         """
@@ -27,7 +27,7 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -64,7 +64,7 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = self.sdk_configuration.client
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -98,7 +98,7 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = self.sdk_configuration.client
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -129,7 +129,7 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = self.sdk_configuration.client
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -164,7 +164,7 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = self.sdk_configuration.client
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -181,7 +181,7 @@ class Animals:
         return res
 
     
-    def get_animals_by_id(self, request: operations.GetAnimalsByIDRequest, security: operations.GetAnimalsByIDSecurity) -> operations.GetAnimalsByIDResponse:
+    def get_animals_by_id(self, request: operations.GetAnimalsByIDRequest) -> operations.GetAnimalsByIDResponse:
         r"""Get Animal
         Get an animal
         """
@@ -196,7 +196,7 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -219,7 +219,7 @@ class Animals:
         return res
 
     
-    def update_animals_by_id(self, request: operations.UpdateAnimalsByIDRequest, security: operations.UpdateAnimalsByIDSecurity) -> operations.UpdateAnimalsByIDResponse:
+    def update_animals_by_id(self, request: operations.UpdateAnimalsByIDRequest) -> operations.UpdateAnimalsByIDResponse:
         r"""Update Animal
         Update the animal object
         """
@@ -233,7 +233,7 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

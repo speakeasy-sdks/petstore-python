@@ -10,24 +10,24 @@ pip install git+https://github.com/speakeasy-sdks/petstore-python.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import pb
-from pb.models import operations
+from pb.models import operations, shared
 
-s = pb.Pb()
-
-req = operations.CreateAnimalRequestBody(
-    age=548814,
-    color='provident',
-    id='bd9d8d69-a674-4e0f-867c-c8796ed151a0',
-    name='Estelle Will',
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
 )
 
-res = s.animals.create_animal(req, operations.CreateAnimalSecurity(
-    key1="",
-))
+req = operations.CreateAnimalRequestBody(
+    age=870013,
+    color='at',
+    id='f7cc78ca-1ba9-428f-8816-742cb7392059',
+    name='Sheryl Fadel',
+)
+
+res = s.animals.create_animal(req)
 
 if res.animals is not None:
     # handle response
@@ -55,6 +55,32 @@ if res.animals is not None:
 * [get_all_birds](docs/sdks/birds/README.md#get_all_birds) - Get Birds
 * [get_all_living_things](docs/sdks/birds/README.md#get_all_living_things) - Get All living things
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

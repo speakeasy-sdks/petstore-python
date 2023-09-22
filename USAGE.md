@@ -3,9 +3,13 @@
 
 ```python
 import pb
-from pb.models import operations
+from pb.models import operations, shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = operations.CreateAnimalRequestBody(
     age=548814,
@@ -14,9 +18,7 @@ req = operations.CreateAnimalRequestBody(
     name='Estelle Will',
 )
 
-res = s.animals.create_animal(req, operations.CreateAnimalSecurity(
-    key1="",
-))
+res = s.animals.create_animal(req)
 
 if res.animals is not None:
     # handle response

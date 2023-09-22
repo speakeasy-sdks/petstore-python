@@ -10,14 +10,6 @@ from pb import utils
 from typing import Optional
 
 
-
-@dataclasses.dataclass
-class CreateAnimalSecurity:
-    key1: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'oauth2', 'field_name': 'Authorization' }})
-    
-
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass

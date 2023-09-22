@@ -21,33 +21,37 @@ Create a living thing
 import pb
 from pb.models import shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = shared.ComplexObject(
     data=shared.ComplexObjectData(
         animal=[
             shared.Animals(
-                age=535633,
-                color='pariatur',
-                id='9cbf4863-3323-4f9b-b7f3-a4100674ebf6',
-                name='Dr. Craig Littel DDS',
+                age=743835,
+                color='dolorum',
+                id='77a89ebf-737a-4e42-83ce-5e6a95d8a0d4',
+                name='Gina Schmeler',
             ),
         ],
         birds=shared.ComplexObjectDataBirds(
             food=[
                 'dolorum',
             ],
-            id='77a89ebf-737a-4e42-83ce-5e6a95d8a0d4',
-            name='Gina Schmeler',
+            id='f7a73cf3-be45-43f8-b0b3-26b5a73429cd',
+            name='Keith Padberg',
         ),
-        created_date='a',
-        updated_date=687488,
+        created_date=174909,
+        updated_date=7044.74,
     ),
     meta=shared.Pagination(
         has_more=False,
-        page_number=215507,
+        page_number=463150,
     ),
-    name='Saul Fay',
+    name='Marty Deckow',
 )
 
 res = s.birds.create_living_things(req)
@@ -78,36 +82,40 @@ Create a new Bird
 import pb
 from pb.models import shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = shared.NestedBird(
     age=shared.NestedBirdAge(
-        amount=2539.41,
-        unit=shared.NestedBirdAgeUnit.MONTHS,
+        amount=1649.59,
+        unit=shared.NestedBirdAgeUnit.YEARS,
     ),
     flight=shared.NestedBirdFlight(
         can_fly=False,
         wings=shared.NestedBirdFlightWings(
-            count=213312,
+            count=124833,
             span=shared.NestedBirdFlightWingsSpan(
-                amount=9574.51,
-                unit='totam',
+                amount=3556.13,
+                unit='nam',
             ),
         ),
     ),
     food=[
-        'nihil',
+        'hic',
     ],
-    id='0b326b5a-7342-49cd-b1a8-422bb679d232',
+    id='0cbb1e31-b8b9-40f3-843a-1108e0adcf4b',
     location=[
         shared.NestedBirdLocation(
             geography=shared.NestedBirdLocationGeography(
-                latitude='magni',
-                longitutde='odio',
+                latitude='cupiditate',
+                longitutde='qui',
             ),
         ),
     ],
-    name='Marion Reichert DDS',
+    name='Marsha Kuhic',
 )
 
 res = s.birds.create_new_bird(req)
@@ -138,14 +146,18 @@ Get All birds
 import pb
 from pb.models import shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = [
     shared.Birds(
         can_fly=False,
-        id='bb1e31b8-b90f-4344-ba11-08e0adcf4b92',
-        name='Marsha Kuhic',
-        wing_span=787542,
+        id='ce953f73-ef7f-4bc7-abd7-4dd39c0f5d2c',
+        name='Domingo Kris',
+        wing_span=4048,
     ),
 ]
 
@@ -175,13 +187,17 @@ get All living things data
 
 ```python
 import pb
-from pb.models import operations
+from pb.models import operations, shared
 
-s = pb.Pb()
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
 
 req = operations.GetAllLivingThingsRequest(
     filter=[
-        'vero',
+        'officia',
     ],
 )
 

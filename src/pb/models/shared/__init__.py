@@ -6,5 +6,6 @@ from .complexobject import *
 from .error import *
 from .nestedbird import *
 from .pagination import *
+from .security import *
 
-__all__ = ["Animals","Birds","ComplexObject","ComplexObjectData","ComplexObjectDataBirds","ComplexObjectMeta2","Error","NestedBird","NestedBirdAge","NestedBirdAgeUnit","NestedBirdFlight","NestedBirdFlightWings","NestedBirdFlightWingsSpan","NestedBirdLocation","NestedBirdLocationGeography","Pagination"]
+__all__ = ["Animals","Birds","ComplexObject","ComplexObjectData","ComplexObjectDataBirds","ComplexObjectMeta2","Error","NestedBird","NestedBirdAge","NestedBirdAgeUnit","NestedBirdFlight","NestedBirdFlightWings","NestedBirdFlightWingsSpan","NestedBirdLocation","NestedBirdLocationGeography","Pagination","Security"]
