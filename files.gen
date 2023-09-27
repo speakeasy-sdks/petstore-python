@@ -38,6 +38,7 @@ docs/models/operations/deleteanimalsbyidresponse.md
 docs/models/operations/getallanimalsrequest.md
 docs/models/operations/getallanimalsresponse.md
 docs/models/operations/getalllivingthingsrequest.md
+docs/models/operations/getalllivingthings200applicationjson.md
 docs/models/operations/getalllivingthingsresponse.md
 docs/models/operations/getanimalsbyidrequest.md
 docs/models/operations/getanimalsbyidresponse.md
@@ -50,8 +51,11 @@ docs/models/operations/getallbirdsresponse.md
 docs/models/shared/error.md
 docs/models/shared/animals.md
 docs/models/shared/complexobjectdatabirds.md
+docs/models/shared/complexobjectdatacreateddate.md
+docs/models/shared/complexobjectdataupdateddate.md
 docs/models/shared/complexobjectdata.md
 docs/models/shared/complexobjectmeta2.md
+docs/models/shared/complexobjectmeta.md
 docs/models/shared/complexobject.md
 docs/models/shared/pagination.md
 docs/models/shared/nestedbirdageunit.md
