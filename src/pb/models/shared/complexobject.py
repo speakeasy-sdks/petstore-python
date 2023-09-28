@@ -3,9 +3,10 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import animals as shared_animals
+from ..shared import pagination as shared_pagination
 from dataclasses_json import Undefined, dataclass_json
 from pb import utils
-from typing import Any, Optional
+from typing import Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -19,14 +20,26 @@ class ComplexObjectDataBirds:
 
 
 
+
+@dataclasses.dataclass
+class ComplexObjectDataCreatedDate:
+    pass
+
+
+
+@dataclasses.dataclass
+class ComplexObjectDataUpdatedDate:
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class ComplexObjectData:
     animal: Optional[list[shared_animals.Animals]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('animal'), 'exclude': lambda f: f is None }})
     birds: Optional[ComplexObjectDataBirds] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birds'), 'exclude': lambda f: f is None }})
-    created_date: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdDate'), 'exclude': lambda f: f is None }})
-    updated_date: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedDate'), 'exclude': lambda f: f is None }})
+    created_date: Optional[Union[int, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdDate'), 'exclude': lambda f: f is None }})
+    updated_date: Optional[Union[int, float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updatedDate'), 'exclude': lambda f: f is None }})
     
 
 
@@ -40,12 +53,18 @@ class ComplexObjectMeta2:
 
 
 
+
+@dataclasses.dataclass
+class ComplexObjectMeta:
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class ComplexObject:
     data: Optional[ComplexObjectData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-    meta: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
+    meta: Optional[Union[shared_pagination.Pagination, ComplexObjectMeta2]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     
 

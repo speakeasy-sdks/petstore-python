@@ -38,7 +38,7 @@ if res.animals is not None:
 ## Available Resources and Operations
 
 
-### [Animals](docs/sdks/animals/README.md)
+### [animals](docs/sdks/animals/README.md)
 
 * [create_animal](docs/sdks/animals/README.md#create_animal) - create an animal
 * [create_living_things](docs/sdks/animals/README.md#create_living_things) - create a living thing
@@ -48,7 +48,7 @@ if res.animals is not None:
 * [get_animals_by_id](docs/sdks/animals/README.md#get_animals_by_id) - Get Animal
 * [update_animals_by_id](docs/sdks/animals/README.md#update_animals_by_id) - Update Animal
 
-### [Birds](docs/sdks/birds/README.md)
+### [birds](docs/sdks/birds/README.md)
 
 * [create_living_things](docs/sdks/birds/README.md#create_living_things) - create a living thing
 * [create_new_bird](docs/sdks/birds/README.md#create_new_bird) - Create new Bird

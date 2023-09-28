@@ -1,4 +1,5 @@
 # Animals
+(*animals*)
 
 ## Overview
 
@@ -88,14 +89,11 @@ req = shared.ComplexObject(
             id='15471b5e-6e13-4b99-9488-e1e91e450ad2',
             name='Rudy Spencer',
         ),
-        created_date=397821,
-        updated_date=5528.22,
+        created_date=[],
+        updated_date=[],
     ),
-    meta=shared.Pagination(
-        has_more=False,
-        page_number=164940,
-    ),
-    name='Vernon Abshire',
+    meta=[],
+    name='Beth McGlynn Sr.',
 )
 
 res = s.animals.create_living_things(req)
@@ -133,7 +131,7 @@ s = pb.Pb(
 )
 
 req = operations.DeleteAnimalsByIDRequest(
-    id='94bb4f63-c969-4e9a-befa-77dfb14cd66a',
+    id='d502a94b-b4f6-43c9-a9e9-a3efa77dfb14',
 )
 
 res = s.animals.delete_animals_by_id(req)
@@ -171,10 +169,10 @@ s = pb.Pb(
 )
 
 req = operations.GetAllAnimalsRequest(
-    age='accusamus',
-    color='non',
-    id='95efb9ba-88f3-4a66-9970-74ba4469b6e2',
-    name='Danielle Bosco',
+    age='cumque',
+    color='facere',
+    id='66ae395e-fb9b-4a88-b3a6-6997074ba446',
+    name='Robin Keebler',
 )
 
 res = s.animals.get_all_animals(req)
@@ -213,7 +211,7 @@ s = pb.Pb(
 
 req = operations.GetAllLivingThingsRequest(
     filter=[
-        'provident',
+        'architecto',
     ],
 )
 
@@ -253,13 +251,13 @@ s = pb.Pb(
 
 req = operations.GetAnimalsByIDRequest(
     animals=shared.Animals(
-        age=551816,
-        color='sint',
-        id='0afa563e-2516-4fe4-88b7-11e5b7fd2ed0',
-        name='Irma Morissette DDS',
+        age=298282,
+        color='et',
+        id='959890af-a563-4e25-96fe-4c8b711e5b7f',
+        name='Louis Turner Sr.',
     ),
-    id='ddc69260-1fb5-476b-8d5f-0d30c5fbb258',
-    per_page=489549,
+    id='8921cddc-6926-401f-b576-b0d5f0d30c5f',
+    per_page=729991,
 )
 
 res = s.animals.get_animals_by_id(req)
@@ -298,12 +296,12 @@ s = pb.Pb(
 
 req = operations.UpdateAnimalsByIDRequest(
     animals=shared.Animals(
-        age=54338,
-        color='quis',
-        id='3202c73d-5fe9-4b90-8289-09b3fe49a8d9',
-        name='Randolph Wintheiser',
+        age=749999,
+        color='dolores',
+        id='58705320-2c73-4d5f-a9b9-0c28909b3fe4',
+        name='Omar Leuschke',
     ),
-    id='633323f9-b77f-43a4-9006-74ebf69280d1',
+    id='cbf48633-323f-49b7-bf3a-4100674ebf69',
 )
 
 res = s.animals.update_animals_by_id(req)

@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from pb import utils
 from pb.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional, Union
 
 class Birds:
     r"""Birds information."""
@@ -139,7 +139,7 @@ class Birds:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[Union[]])
                 res.get_all_living_things_200_application_json_object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
