@@ -1,4 +1,5 @@
 # Animals
+(*animals*)
 
 ## Overview
 
@@ -31,10 +32,10 @@ s = pb.Pb(
 )
 
 req = operations.CreateAnimalRequestBody(
-    age=943749,
-    color='saepe',
-    id='a7596eb1-0faa-4a23-92c5-955907aff1a3',
-    name='Carlos Ziemann',
+    age=239780,
+    color='maroon',
+    id='<ID>',
+    name='Buckinghamshire TLS',
 )
 
 res = s.animals.create_animal(req)
@@ -75,27 +76,24 @@ req = shared.ComplexObject(
     data=shared.ComplexObjectData(
         animal=[
             shared.Animals(
-                age=253291,
-                color='commodi',
-                id='7739251a-a52c-43f5-ad01-9da1ffe78f09',
-                name='Ms. Karla Aufderhar',
+                age=24488,
+                color='sky blue',
+                id='<ID>',
+                name='loyalty Officer withdrawal',
             ),
         ],
         birds=shared.ComplexObjectDataBirds(
             food=[
-                'maiores',
+                'ruddy',
             ],
-            id='15471b5e-6e13-4b99-9488-e1e91e450ad2',
-            name='Rudy Spencer',
+            id='<ID>',
+            name='Fantastic',
         ),
-        created_date=397821,
-        updated_date=5528.22,
+        created_date=[],
+        updated_date=[],
     ),
-    meta=shared.Pagination(
-        has_more=False,
-        page_number=164940,
-    ),
-    name='Vernon Abshire',
+    meta=[],
+    name='Chicken',
 )
 
 res = s.animals.create_living_things(req)
@@ -133,7 +131,7 @@ s = pb.Pb(
 )
 
 req = operations.DeleteAnimalsByIDRequest(
-    id='94bb4f63-c969-4e9a-befa-77dfb14cd66a',
+    id='<ID>',
 )
 
 res = s.animals.delete_animals_by_id(req)
@@ -171,10 +169,10 @@ s = pb.Pb(
 )
 
 req = operations.GetAllAnimalsRequest(
-    age='accusamus',
-    color='non',
-    id='95efb9ba-88f3-4a66-9970-74ba4469b6e2',
-    name='Danielle Bosco',
+    age='Avon',
+    color='turquoise',
+    id='<ID>',
+    name='plum',
 )
 
 res = s.animals.get_all_animals(req)
@@ -213,7 +211,7 @@ s = pb.Pb(
 
 req = operations.GetAllLivingThingsRequest(
     filter=[
-        'provident',
+        'qua',
     ],
 )
 
@@ -253,13 +251,13 @@ s = pb.Pb(
 
 req = operations.GetAnimalsByIDRequest(
     animals=shared.Animals(
-        age=551816,
-        color='sint',
-        id='0afa563e-2516-4fe4-88b7-11e5b7fd2ed0',
-        name='Irma Morissette DDS',
+        age=942154,
+        color='plum',
+        id='<ID>',
+        name='enhance product',
     ),
-    id='ddc69260-1fb5-476b-8d5f-0d30c5fbb258',
-    per_page=489549,
+    id='<ID>',
+    per_page=208636,
 )
 
 res = s.animals.get_animals_by_id(req)
@@ -298,12 +296,12 @@ s = pb.Pb(
 
 req = operations.UpdateAnimalsByIDRequest(
     animals=shared.Animals(
-        age=54338,
-        color='quis',
-        id='3202c73d-5fe9-4b90-8289-09b3fe49a8d9',
-        name='Randolph Wintheiser',
+        age=15412,
+        color='ivory',
+        id='<ID>',
+        name='index Elizabeth Fish',
     ),
-    id='633323f9-b77f-43a4-9006-74ebf69280d1',
+    id='<ID>',
 )
 
 res = s.animals.update_animals_by_id(req)
