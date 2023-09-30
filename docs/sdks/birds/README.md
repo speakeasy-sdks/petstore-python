@@ -1,4 +1,5 @@
 # Birds
+(*birds*)
 
 ## Overview
 
@@ -31,27 +32,24 @@ req = shared.ComplexObject(
     data=shared.ComplexObjectData(
         animal=[
             shared.Animals(
-                age=743835,
-                color='dolorum',
-                id='77a89ebf-737a-4e42-83ce-5e6a95d8a0d4',
-                name='Gina Schmeler',
+                age=24488,
+                color='sky blue',
+                id='<ID>',
+                name='loyalty Officer withdrawal',
             ),
         ],
         birds=shared.ComplexObjectDataBirds(
             food=[
-                'dolorum',
+                'ruddy',
             ],
-            id='f7a73cf3-be45-43f8-b0b3-26b5a73429cd',
-            name='Keith Padberg',
+            id='<ID>',
+            name='Fantastic',
         ),
-        created_date=174909,
-        updated_date=7044.74,
+        created_date=[],
+        updated_date=[],
     ),
-    meta=shared.Pagination(
-        has_more=False,
-        page_number=463150,
-    ),
-    name='Marty Deckow',
+    meta=[],
+    name='Chicken',
 )
 
 res = s.birds.create_living_things(req)
@@ -90,32 +88,32 @@ s = pb.Pb(
 
 req = shared.NestedBird(
     age=shared.NestedBirdAge(
-        amount=1649.59,
+        amount=5601.46,
         unit=shared.NestedBirdAgeUnit.YEARS,
     ),
     flight=shared.NestedBirdFlight(
         can_fly=False,
         wings=shared.NestedBirdFlightWings(
-            count=124833,
+            count=959530,
             span=shared.NestedBirdFlightWingsSpan(
-                amount=3556.13,
-                unit='nam',
+                amount=7898.44,
+                unit='katal',
             ),
         ),
     ),
     food=[
-        'hic',
+        'digital',
     ],
-    id='0cbb1e31-b8b9-40f3-843a-1108e0adcf4b',
+    id='<ID>',
     location=[
         shared.NestedBirdLocation(
             geography=shared.NestedBirdLocationGeography(
-                latitude='cupiditate',
-                longitutde='qui',
+                latitude='-69.7312',
+                longitutde='Response',
             ),
         ),
     ],
-    name='Marsha Kuhic',
+    name='wipe Southwest',
 )
 
 res = s.birds.create_new_bird(req)
@@ -155,9 +153,9 @@ s = pb.Pb(
 req = [
     shared.Birds(
         can_fly=False,
-        id='ce953f73-ef7f-4bc7-abd7-4dd39c0f5d2c',
-        name='Domingo Kris',
-        wing_span=4048,
+        id='<ID>',
+        name='Creative',
+        wing_span=956031,
     ),
 ]
 
@@ -197,7 +195,7 @@ s = pb.Pb(
 
 req = operations.GetAllLivingThingsRequest(
     filter=[
-        'officia',
+        'qua',
     ],
 )
 

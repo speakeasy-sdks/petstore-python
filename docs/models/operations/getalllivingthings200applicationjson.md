@@ -1,0 +1,4 @@
+# GetAllLivingThings200ApplicationJSON
+
+OK
+
