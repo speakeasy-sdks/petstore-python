@@ -1,8 +1,8 @@
-# DeleteAnimalsByIDRequest
+# GetAllLivingThings200ApplicationJSON2Meta2Pagination
 
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `page_number`      | *Optional[int]*    | :heavy_minus_sign: | N/A                |

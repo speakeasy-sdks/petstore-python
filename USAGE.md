@@ -12,10 +12,10 @@ s = pb.Pb(
 )
 
 req = operations.CreateAnimalRequestBody(
-    age=548814,
-    color='provident',
-    id='bd9d8d69-a674-4e0f-867c-c8796ed151a0',
-    name='Estelle Will',
+    age=239780,
+    color='maroon',
+    id='<ID>',
+    name='Buckinghamshire TLS',
 )
 
 res = s.animals.create_animal(req)

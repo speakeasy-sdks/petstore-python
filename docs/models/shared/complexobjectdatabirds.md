@@ -1,10 +1,17 @@
 # ComplexObjectDataBirds
 
 
-## Fields
+## Supported Types
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `food`             | list[*str*]        | :heavy_check_mark: | N/A                |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
-| `name`             | *str*              | :heavy_check_mark: | N/A                |
+### 
+
+```python
+complexObjectDataBirds: list[Any] = /* values here */
+```
+
+### ComplexObjectDataBirds2
+
+```python
+complexObjectDataBirds: shared.ComplexObjectDataBirds2 = /* values here */
+```
+

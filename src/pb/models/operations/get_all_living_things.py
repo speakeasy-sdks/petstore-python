@@ -3,7 +3,12 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ..shared import animals as shared_animals
+from ..shared import birds as shared_birds
+from ..shared import pagination as shared_pagination
+from dataclasses_json import Undefined, dataclass_json
+from pb import utils
+from typing import Any, Optional, Union
 
 
 
@@ -15,6 +20,85 @@ class GetAllLivingThingsRequest:
 
 
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON2Meta2Pagination:
+    page_number: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageNumber'), 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON2Meta2:
+    pagination: Optional[GetAllLivingThings200ApplicationJSON2Meta2Pagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON2Meta1:
+    pagination: Optional[shared_pagination.Pagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
+    
+
+
+
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON2Meta:
+    pass
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON2:
+    animals: Optional[list[shared_animals.Animals]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('animals'), 'exclude': lambda f: f is None }})
+    meta: Optional[Union[GetAllLivingThings200ApplicationJSON2Meta1, GetAllLivingThings200ApplicationJSON2Meta2]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON1MetaPagination:
+    page_number: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageNumber'), 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON1Meta:
+    pagination: Optional[GetAllLivingThings200ApplicationJSON1MetaPagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON1:
+    birds: Optional[list[shared_birds.Birds]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birds'), 'exclude': lambda f: f is None }})
+    meta: Optional[GetAllLivingThings200ApplicationJSON1Meta] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
+    
+
+
+
+
+@dataclasses.dataclass
+class GetAllLivingThings200ApplicationJSON:
+    r"""OK"""
+    
+
+
+
 
 @dataclasses.dataclass
 class GetAllLivingThingsResponse:
@@ -22,7 +106,7 @@ class GetAllLivingThingsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_all_living_things_200_application_json_object: Optional[Any] = dataclasses.field(default=None)
+    get_all_living_things_200_application_json_one_of: Optional[Union[GetAllLivingThings200ApplicationJSON1, GetAllLivingThings200ApplicationJSON2]] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
