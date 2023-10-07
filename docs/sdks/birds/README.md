@@ -31,19 +31,15 @@ s = pb.Pb(
 req = shared.ComplexObject(
     data=shared.ComplexObjectData(
         animal=[
-            shared.Animals(
-                age=24488,
-                color='sky blue',
-                id='<ID>',
-                name='loyalty Officer withdrawal',
-            ),
+            shared.Animals(),
         ],
-        birds=[],
-        created_date=[],
-        updated_date=[],
+        [
+            'input',
+        ],
+    248447,
+    6866.6,
     ),
-    meta=[],
-    name='female Fantastic B2B',
+    shared.Pagination(),
 )
 
 res = s.birds.create_living_things(req)
@@ -82,32 +78,21 @@ s = pb.Pb(
 
 req = shared.NestedBird(
     age=shared.NestedBirdAge(
-        amount=5601.46,
         unit=shared.NestedBirdAgeUnit.YEARS,
     ),
     flight=shared.NestedBirdFlight(
-        can_fly=False,
         wings=shared.NestedBirdFlightWings(
-            count=959530,
-            span=shared.NestedBirdFlightWingsSpan(
-                amount=7898.44,
-                unit='katal',
-            ),
+            span=shared.NestedBirdFlightWingsSpan(),
         ),
     ),
     food=[
-        'digital',
+        'silver',
     ],
-    id='<ID>',
     location=[
         shared.NestedBirdLocation(
-            geography=shared.NestedBirdLocationGeography(
-                latitude='-69.7312',
-                longitutde='Response',
-            ),
+            geography=shared.NestedBirdLocationGeography(),
         ),
     ],
-    name='wipe Southwest',
 )
 
 res = s.birds.create_new_bird(req)
@@ -145,12 +130,7 @@ s = pb.Pb(
 )
 
 req = [
-    shared.Birds(
-        can_fly=False,
-        id='<ID>',
-        name='Creative',
-        wing_span=956031,
-    ),
+    shared.Birds(),
 ]
 
 res = s.birds.get_all_birds(req)

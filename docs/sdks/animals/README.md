@@ -32,10 +32,9 @@ s = pb.Pb(
 )
 
 req = operations.CreateAnimalRequestBody(
-    age=239780,
-    color='maroon',
+    color='white',
     id='<ID>',
-    name='Buckinghamshire TLS',
+    name='illo Jeep',
 )
 
 res = s.animals.create_animal(req)
@@ -75,19 +74,15 @@ s = pb.Pb(
 req = shared.ComplexObject(
     data=shared.ComplexObjectData(
         animal=[
-            shared.Animals(
-                age=24488,
-                color='sky blue',
-                id='<ID>',
-                name='loyalty Officer withdrawal',
-            ),
+            shared.Animals(),
         ],
-        birds=[],
-        created_date=[],
-        updated_date=[],
+        [
+            'input',
+        ],
+    248447,
+    6866.6,
     ),
-    meta=[],
-    name='female Fantastic B2B',
+    shared.Pagination(),
 )
 
 res = s.animals.create_living_things(req)
@@ -162,12 +157,7 @@ s = pb.Pb(
     ),
 )
 
-req = operations.GetAllAnimalsRequest(
-    age='Avon',
-    color='turquoise',
-    id='<ID>',
-    name='plum',
-)
+req = operations.GetAllAnimalsRequest()
 
 res = s.animals.get_all_animals(req)
 
@@ -244,14 +234,8 @@ s = pb.Pb(
 )
 
 req = operations.GetAnimalsByIDRequest(
-    animals=shared.Animals(
-        age=942154,
-        color='plum',
-        id='<ID>',
-        name='enhance product',
-    ),
+    animals=shared.Animals(),
     id='<ID>',
-    per_page=208636,
 )
 
 res = s.animals.get_animals_by_id(req)
@@ -289,12 +273,7 @@ s = pb.Pb(
 )
 
 req = operations.UpdateAnimalsByIDRequest(
-    animals=shared.Animals(
-        age=15412,
-        color='ivory',
-        id='<ID>',
-        name='index Elizabeth Fish',
-    ),
+    animals=shared.Animals(),
     id='<ID>',
 )
 
