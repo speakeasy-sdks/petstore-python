@@ -21,5 +21,6 @@ res = s.animals.create_animal(req)
 
 if res.animals is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
