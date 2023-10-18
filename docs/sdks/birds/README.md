@@ -146,7 +146,7 @@ if res.birds is not None:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [list[shared.Birds]](../../models//.md)    | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [List[shared.Birds]](../../models//.md)    | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response

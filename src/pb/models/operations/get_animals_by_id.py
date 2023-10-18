@@ -8,14 +8,12 @@ from ..shared import error as shared_error
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAnimalsByIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     animals: Optional[shared_animals.Animals] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     per_page: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'perPage', 'style': 'form', 'explode': True }})
     
-
 
 
 

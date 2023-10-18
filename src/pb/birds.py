@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from pb import utils
 from pb.models import errors, operations, shared
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 class Birds:
     r"""Birds information."""
@@ -81,7 +81,7 @@ class Birds:
         return res
 
     
-    def get_all_birds(self, request: list[shared.Birds]) -> operations.GetAllBirdsResponse:
+    def get_all_birds(self, request: List[shared.Birds]) -> operations.GetAllBirdsResponse:
         r"""Get Birds
         Get All birds
         """
@@ -104,7 +104,7 @@ class Birds:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.Birds]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.Birds]])
                 res.birds = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from pb import utils
 from pb.models import errors, operations, shared
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 class Animals:
     r"""Work with Animals."""
@@ -138,7 +138,7 @@ class Animals:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.Animals]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.Animals]])
                 res.animals = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

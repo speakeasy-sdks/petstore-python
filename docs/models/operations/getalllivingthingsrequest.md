@@ -5,4 +5,4 @@
 
 | Field               | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| `filter`            | list[*Any*]         | :heavy_minus_sign:  | include all filters |
+| `filter`            | List[*Any*]         | :heavy_minus_sign:  | include all filters |

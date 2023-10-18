@@ -8,20 +8,18 @@ from ..shared import birds as shared_birds
 from ..shared import pagination as shared_pagination
 from dataclasses_json import Undefined, dataclass_json
 from pb import utils
-from typing import Any, Optional, Union
-
+from typing import Any, List, Optional, Union
 
 
 @dataclasses.dataclass
 class GetAllLivingThingsRequest:
-    filter: Optional[list[Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
+    filter: Optional[List[Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
     r"""include all filters"""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllLivingThings200ApplicationJSON2Meta2Pagination:
     page_number: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageNumber'), 'exclude': lambda f: f is None }})
@@ -30,7 +28,6 @@ class GetAllLivingThings200ApplicationJSON2Meta2Pagination:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllLivingThings200ApplicationJSON2Meta2:
     pagination: Optional[GetAllLivingThings200ApplicationJSON2Meta2Pagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
@@ -39,12 +36,10 @@ class GetAllLivingThings200ApplicationJSON2Meta2:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllLivingThings200ApplicationJSON2Meta1:
     pagination: Optional[shared_pagination.Pagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -54,17 +49,15 @@ class GetAllLivingThings200ApplicationJSON2Meta:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllLivingThings200ApplicationJSON2:
-    animals: Optional[list[shared_animals.Animals]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('animals'), 'exclude': lambda f: f is None }})
+    animals: Optional[List[shared_animals.Animals]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('animals'), 'exclude': lambda f: f is None }})
     meta: Optional[Union[GetAllLivingThings200ApplicationJSON2Meta1, GetAllLivingThings200ApplicationJSON2Meta2]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllLivingThings200ApplicationJSON1MetaPagination:
     page_number: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageNumber'), 'exclude': lambda f: f is None }})
@@ -73,7 +66,6 @@ class GetAllLivingThings200ApplicationJSON1MetaPagination:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllLivingThings200ApplicationJSON1Meta:
     pagination: Optional[GetAllLivingThings200ApplicationJSON1MetaPagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
@@ -82,13 +74,11 @@ class GetAllLivingThings200ApplicationJSON1Meta:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllLivingThings200ApplicationJSON1:
-    birds: Optional[list[shared_birds.Birds]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birds'), 'exclude': lambda f: f is None }})
+    birds: Optional[List[shared_birds.Birds]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birds'), 'exclude': lambda f: f is None }})
     meta: Optional[GetAllLivingThings200ApplicationJSON1Meta] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -96,7 +86,6 @@ class GetAllLivingThings200ApplicationJSON1:
 class GetAllLivingThings200ApplicationJSON:
     r"""OK"""
     
-
 
 
 

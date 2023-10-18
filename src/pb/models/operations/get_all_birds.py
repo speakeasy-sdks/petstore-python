@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import birds as shared_birds
 from ..shared import error as shared_error
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -15,7 +14,7 @@ class GetAllBirdsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    birds: Optional[list[shared_birds.Birds]] = dataclasses.field(default=None)
+    birds: Optional[List[shared_birds.Birds]] = dataclasses.field(default=None)
     r"""OK"""
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""Internal Server Error"""
