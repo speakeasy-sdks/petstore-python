@@ -34,10 +34,10 @@ req = shared.ComplexObject(
             shared.Animals(),
         ],
         [
-            'input',
+            'string',
         ],
-    248447,
-    6866.6,
+    'string',
+    3824.71,
     ),
     shared.Pagination(),
 )
@@ -87,7 +87,7 @@ req = shared.NestedBird(
         ),
     ),
     food=[
-        'silver',
+        'string',
     ],
     location=[
         shared.NestedBirdLocation(
@@ -172,7 +172,7 @@ s = pb.Pb(
 
 req = operations.GetAllLivingThingsRequest(
     filter=[
-        'qua',
+        'string',
     ],
 )
 

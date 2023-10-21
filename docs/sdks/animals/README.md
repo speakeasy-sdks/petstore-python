@@ -34,7 +34,7 @@ s = pb.Pb(
 req = operations.CreateAnimalRequestBody(
     color='white',
     id='<ID>',
-    name='Home',
+    name='string',
 )
 
 res = s.animals.create_animal(req)
@@ -78,10 +78,10 @@ req = shared.ComplexObject(
             shared.Animals(),
         ],
         [
-            'input',
+            'string',
         ],
-    248447,
-    6866.6,
+    'string',
+    3824.71,
     ),
     shared.Pagination(),
 )
@@ -199,7 +199,7 @@ s = pb.Pb(
 
 req = operations.GetAllLivingThingsRequest(
     filter=[
-        'qua',
+        'string',
     ],
 )
 
