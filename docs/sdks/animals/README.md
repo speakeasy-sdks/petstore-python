@@ -1,5 +1,5 @@
 # Animals
-(*animals*)
+(*.animals*)
 
 ## Overview
 
@@ -73,7 +73,7 @@ s = pb.Pb(
 )
 
 req = shared.ComplexObject(
-    data=shared.ComplexObjectData(
+    data=shared.Data(
         animal=[
             shared.Animals(),
         ],
@@ -164,7 +164,7 @@ req = operations.GetAllAnimalsRequest()
 
 res = s.animals.get_all_animals(req)
 
-if res.animals is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -205,7 +205,7 @@ req = operations.GetAllLivingThingsRequest(
 
 res = s.animals.get_all_living_things(req)
 
-if res.get_all_living_things_200_application_json_one_of is not None:
+if res.one_of is not None:
     # handle response
     pass
 ```

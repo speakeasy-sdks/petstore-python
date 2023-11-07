@@ -3,8 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import animals as shared_animals
-from ..shared import error as shared_error
+from ...models.shared import animals as shared_animals
 from typing import Optional
 
 
@@ -24,8 +23,6 @@ class UpdateAnimalsByIDResponse:
     r"""HTTP response status code for this operation"""
     animals: Optional[shared_animals.Animals] = dataclasses.field(default=None)
     r"""OK"""
-    error: Optional[shared_error.Error] = dataclasses.field(default=None)
-    r"""Internal Server Error"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

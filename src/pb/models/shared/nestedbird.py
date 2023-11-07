@@ -7,7 +7,7 @@ from enum import Enum
 from pb import utils
 from typing import List, Optional
 
-class NestedBirdAgeUnit(str, Enum):
+class Unit(str, Enum):
     MONTHS = 'months'
     YEARS = 'years'
     DAYS = 'days'
@@ -15,8 +15,8 @@ class NestedBirdAgeUnit(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NestedBirdAge:
-    unit: NestedBirdAgeUnit = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
+class Age:
+    unit: Unit = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit') }})
     amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount'), 'exclude': lambda f: f is None }})
     
 
@@ -24,7 +24,7 @@ class NestedBirdAge:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NestedBirdFlightWingsSpan:
+class Span:
     amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount'), 'exclude': lambda f: f is None }})
     unit: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit'), 'exclude': lambda f: f is None }})
     
@@ -33,25 +33,25 @@ class NestedBirdFlightWingsSpan:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NestedBirdFlightWings:
+class Wings:
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
-    span: Optional[NestedBirdFlightWingsSpan] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('span'), 'exclude': lambda f: f is None }})
+    span: Optional[Span] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('span'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NestedBirdFlight:
+class Flight:
     can_fly: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canFly'), 'exclude': lambda f: f is None }})
-    wings: Optional[NestedBirdFlightWings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wings'), 'exclude': lambda f: f is None }})
+    wings: Optional[Wings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('wings'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NestedBirdLocationGeography:
+class Geography:
     latitude: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('latitude'), 'exclude': lambda f: f is None }})
     longitutde: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('longitutde'), 'exclude': lambda f: f is None }})
     
@@ -60,8 +60,8 @@ class NestedBirdLocationGeography:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NestedBirdLocation:
-    geography: Optional[NestedBirdLocationGeography] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('geography'), 'exclude': lambda f: f is None }})
+class Location:
+    geography: Optional[Geography] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('geography'), 'exclude': lambda f: f is None }})
     
 
 
@@ -69,11 +69,11 @@ class NestedBirdLocation:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class NestedBird:
-    age: Optional[NestedBirdAge] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('age'), 'exclude': lambda f: f is None }})
-    flight: Optional[NestedBirdFlight] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flight'), 'exclude': lambda f: f is None }})
+    age: Optional[Age] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('age'), 'exclude': lambda f: f is None }})
+    flight: Optional[Flight] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flight'), 'exclude': lambda f: f is None }})
     food: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('food'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    location: Optional[List[NestedBirdLocation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location'), 'exclude': lambda f: f is None }})
+    location: Optional[List[Location]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('location'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     
 

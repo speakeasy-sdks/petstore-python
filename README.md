@@ -38,7 +38,7 @@ if res.animals is not None:
 ## Available Resources and Operations
 
 
-### [animals](docs/sdks/animals/README.md)
+### [.animals](docs/sdks/animals/README.md)
 
 * [create_animal](docs/sdks/animals/README.md#create_animal) - create an animal
 * [create_living_things](docs/sdks/animals/README.md#create_living_things) - create a living thing
@@ -48,7 +48,7 @@ if res.animals is not None:
 * [get_animals_by_id](docs/sdks/animals/README.md#get_animals_by_id) - Get Animal
 * [update_animals_by_id](docs/sdks/animals/README.md#update_animals_by_id) - Update Animal
 
-### [birds](docs/sdks/birds/README.md)
+### [.birds](docs/sdks/birds/README.md)
 
 * [create_living_things](docs/sdks/birds/README.md#create_living_things) - create a living thing
 * [create_new_bird](docs/sdks/birds/README.md#create_new_bird) - Create new Bird
@@ -82,6 +82,36 @@ Here's an example of one such pagination call:
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
 
+## Example
+
+```python
+import pb
+from pb.models import operations, shared
+
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
+
+req = operations.CreateAnimalRequestBody(
+    color='white',
+    id='<ID>',
+    name='string',
+)
+
+res = None
+try:
+    res = s.animals.create_animal(req)
+
+
+except (Error) as e:
+    print(e) # handle exception
+
+if res.animals is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -100,16 +130,15 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import pb
 from pb.models import operations, shared
 
 s = pb.Pb(
+    server_idx=1,
     security=shared.Security(
         key1="",
     ),
-    server_idx=1
 )
 
 req = operations.CreateAnimalRequestBody(
@@ -130,16 +159,15 @@ if res.animals is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import pb
 from pb.models import operations, shared
 
 s = pb.Pb(
+    server_url="https://api.petstore.com",
     security=shared.Security(
         key1="",
     ),
-    server_url="https://api.petstore.com"
 )
 
 req = operations.CreateAnimalRequestBody(
@@ -174,9 +202,47 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = pb.Pb(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name         | Type         | Scheme       |
+| ------------ | ------------ | ------------ |
+| `key1`       | oauth2       | OAuth2 token |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+
+```python
+import pb
+from pb.models import operations, shared
+
+s = pb.Pb(
+    security=shared.Security(
+        key1="",
+    ),
+)
+
+req = operations.CreateAnimalRequestBody(
+    color='white',
+    id='<ID>',
+    name='string',
+)
+
+res = s.animals.create_animal(req)
+
+if res.animals is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

@@ -1,5 +1,5 @@
 # Birds
-(*birds*)
+(*.birds*)
 
 ## Overview
 
@@ -29,7 +29,7 @@ s = pb.Pb(
 )
 
 req = shared.ComplexObject(
-    data=shared.ComplexObjectData(
+    data=shared.Data(
         animal=[
             shared.Animals(),
         ],
@@ -78,27 +78,27 @@ s = pb.Pb(
 )
 
 req = shared.NestedBird(
-    age=shared.NestedBirdAge(
-        unit=shared.NestedBirdAgeUnit.YEARS,
+    age=shared.Age(
+        unit=shared.Unit.YEARS,
     ),
-    flight=shared.NestedBirdFlight(
-        wings=shared.NestedBirdFlightWings(
-            span=shared.NestedBirdFlightWingsSpan(),
+    flight=shared.Flight(
+        wings=shared.Wings(
+            span=shared.Span(),
         ),
     ),
     food=[
         'string',
     ],
     location=[
-        shared.NestedBirdLocation(
-            geography=shared.NestedBirdLocationGeography(),
+        shared.Location(
+            geography=shared.Geography(),
         ),
     ],
 )
 
 res = s.birds.create_new_bird(req)
 
-if res.create_new_bird_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -137,7 +137,7 @@ req = [
 
 res = s.birds.get_all_birds(req)
 
-if res.birds is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -178,7 +178,7 @@ req = operations.GetAllLivingThingsRequest(
 
 res = s.birds.get_all_living_things(req)
 
-if res.get_all_living_things_200_application_json_one_of is not None:
+if res.one_of is not None:
     # handle response
     pass
 ```

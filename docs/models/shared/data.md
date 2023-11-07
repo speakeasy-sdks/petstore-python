@@ -1,0 +1,11 @@
+# Data
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `animal`                                                                                       | List[[shared.Animals](../../models/shared/animals.md)]                                         | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `birds`                                                                                        | [Optional[Union[List[Any], shared.ComplexObject2]]](../../models/shared/complexobjectbirds.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `created_date`                                                                                 | [Optional[Union[int, str]]](../../models/shared/createddate.md)                                | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `updated_date`                                                                                 | [Optional[Union[int, float]]](../../models/shared/updateddate.md)                              | :heavy_minus_sign:                                                                             | N/A                                                                                            |

@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import nestedbird as shared_nestedbird
-from ..shared import pagination as shared_pagination
+from ...models.shared import nestedbird as shared_nestedbird
+from ...models.shared import pagination as shared_pagination
 from dataclasses_json import Undefined, dataclass_json
 from pb import utils
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateNewBird200ApplicationJSONMeta:
+class Meta:
     pagination: Optional[shared_pagination.Pagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
     trace_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('traceId'), 'exclude': lambda f: f is None }})
     
@@ -21,10 +21,10 @@ class CreateNewBird200ApplicationJSONMeta:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateNewBird200ApplicationJSON:
+class CreateNewBirdResponseBody:
     r"""OK"""
     data: Optional[shared_nestedbird.NestedBird] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-    meta: Optional[CreateNewBird200ApplicationJSONMeta] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
+    meta: Optional[Meta] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
     
 
 
@@ -35,7 +35,7 @@ class CreateNewBirdResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_new_bird_200_application_json_object: Optional[CreateNewBird200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[CreateNewBirdResponseBody] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
