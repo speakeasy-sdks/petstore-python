@@ -13,6 +13,7 @@ class Animals:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_animal(self, request: operations.CreateAnimalRequestBody) -> operations.CreateAnimalResponse:
         r"""create an animal
         Post animals description
@@ -27,7 +28,10 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -53,6 +57,7 @@ class Animals:
         return res
 
     
+    
     def create_living_things(self, request: shared.ComplexObject) -> operations.CreateLivingThingsResponse:
         r"""create a living thing
         Create a living thing
@@ -67,7 +72,10 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -93,6 +101,7 @@ class Animals:
         return res
 
     
+    
     def delete_animals_by_id(self, request: operations.DeleteAnimalsByIDRequest) -> operations.DeleteAnimalsByIDResponse:
         r"""Delete Animal Object
         Delete the animal
@@ -104,7 +113,10 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -126,6 +138,7 @@ class Animals:
         return res
 
     
+    
     def get_all_animals(self, request: operations.GetAllAnimalsRequest) -> operations.GetAllAnimalsResponse:
         r"""Your GET endpoint
         Get Animals Description
@@ -138,7 +151,10 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -164,6 +180,7 @@ class Animals:
         return res
 
     
+    
     def get_all_living_things(self, request: operations.GetAllLivingThingsRequest) -> operations.GetAllLivingThingsResponse:
         r"""Get All living things
         get All living things data
@@ -176,7 +193,10 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -195,6 +215,7 @@ class Animals:
         return res
 
     
+    
     def get_animals_by_id(self, request: operations.GetAnimalsByIDRequest) -> operations.GetAnimalsByIDResponse:
         r"""Get Animal
         Get an animal
@@ -210,7 +231,10 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -236,6 +260,7 @@ class Animals:
         return res
 
     
+    
     def update_animals_by_id(self, request: operations.UpdateAnimalsByIDRequest) -> operations.UpdateAnimalsByIDResponse:
         r"""Update Animal
         Update the animal object
@@ -250,7 +275,10 @@ class Animals:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

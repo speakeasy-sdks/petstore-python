@@ -1,5 +1,5 @@
 # Animals
-(*.animals*)
+(*animals*)
 
 ## Overview
 
@@ -54,7 +54,12 @@ if res.animals is not None:
 ### Response
 
 **[operations.CreateAnimalResponse](../../models/operations/createanimalresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## create_living_things
 
@@ -103,7 +108,12 @@ if res.complex_object is not None:
 ### Response
 
 **[operations.CreateLivingThingsResponse](../../models/operations/createlivingthingsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## delete_animals_by_id
 
@@ -142,7 +152,12 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteAnimalsByIDResponse](../../models/operations/deleteanimalsbyidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_all_animals
 
@@ -179,7 +194,12 @@ if res.classes is not None:
 ### Response
 
 **[operations.GetAllAnimalsResponse](../../models/operations/getallanimalsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_all_living_things
 
@@ -220,7 +240,11 @@ if res.one_of is not None:
 ### Response
 
 **[operations.GetAllLivingThingsResponse](../../models/operations/getalllivingthingsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_animals_by_id
 
@@ -260,7 +284,12 @@ if res.animals is not None:
 ### Response
 
 **[operations.GetAnimalsByIDResponse](../../models/operations/getanimalsbyidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## update_animals_by_id
 
@@ -300,4 +329,9 @@ if res.animals is not None:
 ### Response
 
 **[operations.UpdateAnimalsByIDResponse](../../models/operations/updateanimalsbyidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |

@@ -43,11 +43,6 @@ class GetAllLivingThings1:
 
 
 
-@dataclasses.dataclass
-class GetAllLivingThingsMeta:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Two:
@@ -78,13 +73,6 @@ class GetAllLivingThingsAnimalsMeta:
 class One:
     birds: Optional[List[shared_birds.Birds]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('birds'), 'exclude': lambda f: f is None }})
     meta: Optional[GetAllLivingThingsAnimalsMeta] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meta'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclasses.dataclass
-class GetAllLivingThingsResponseBody:
-    r"""OK"""
     
 
 

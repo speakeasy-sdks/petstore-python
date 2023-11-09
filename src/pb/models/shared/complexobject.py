@@ -14,21 +14,6 @@ class ComplexObject2:
     pass
 
 
-@dataclasses.dataclass
-class ComplexObjectBirds:
-    pass
-
-
-@dataclasses.dataclass
-class CreatedDate:
-    pass
-
-
-@dataclasses.dataclass
-class UpdatedDate:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Data:
@@ -46,11 +31,6 @@ class Two:
     page_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pageNumber'), 'exclude': lambda f: f is None }})
     
 
-
-
-@dataclasses.dataclass
-class Meta:
-    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

@@ -7,4 +7,4 @@ from .nestedbird import *
 from .pagination import *
 from .security import *
 
-__all__ = ["Age","Animals","Birds","ComplexObject","ComplexObject2","ComplexObjectBirds","CreatedDate","Data","Flight","Geography","Location","Meta","NestedBird","Pagination","Security","Span","Two","Unit","UpdatedDate","Wings"]
+__all__ = ["Age","Animals","Birds","ComplexObject","ComplexObject2","Data","Flight","Geography","Location","NestedBird","Pagination","Security","Span","Two","Unit","Wings"]

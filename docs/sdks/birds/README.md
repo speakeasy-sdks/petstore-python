@@ -1,5 +1,5 @@
 # Birds
-(*.birds*)
+(*birds*)
 
 ## Overview
 
@@ -59,7 +59,12 @@ if res.complex_object is not None:
 ### Response
 
 **[operations.CreateLivingThingsResponse](../../models/operations/createlivingthingsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## create_new_bird
 
@@ -113,7 +118,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateNewBirdResponse](../../models/operations/createnewbirdresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_all_birds
 
@@ -146,13 +155,18 @@ if res.classes is not None:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [List[shared.Birds]](../../models//.md)    | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [List[shared.Birds]](../../models/.md)     | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.GetAllBirdsResponse](../../models/operations/getallbirdsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_all_living_things
 
@@ -193,4 +207,8 @@ if res.one_of is not None:
 ### Response
 
 **[operations.GetAllLivingThingsResponse](../../models/operations/getalllivingthingsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -13,6 +13,7 @@ class Birds:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_living_things(self, request: shared.ComplexObject) -> operations.CreateLivingThingsResponse:
         r"""create a living thing
         Create a living thing
@@ -27,7 +28,10 @@ class Birds:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -53,6 +57,7 @@ class Birds:
         return res
 
     
+    
     def create_new_bird(self, request: shared.NestedBird) -> operations.CreateNewBirdResponse:
         r"""Create new Bird
         Create a new Bird
@@ -67,7 +72,10 @@ class Birds:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -86,6 +94,7 @@ class Birds:
         return res
 
     
+    
     def get_all_birds(self, request: List[shared.Birds]) -> operations.GetAllBirdsResponse:
         r"""Get Birds
         Get All birds
@@ -100,7 +109,10 @@ class Birds:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -126,6 +138,7 @@ class Birds:
         return res
 
     
+    
     def get_all_living_things(self, request: operations.GetAllLivingThingsRequest) -> operations.GetAllLivingThingsResponse:
         r"""Get All living things
         get All living things data
@@ -138,7 +151,10 @@ class Birds:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

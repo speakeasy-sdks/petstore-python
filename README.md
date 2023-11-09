@@ -38,7 +38,7 @@ if res.animals is not None:
 ## Available Resources and Operations
 
 
-### [.animals](docs/sdks/animals/README.md)
+### [animals](docs/sdks/animals/README.md)
 
 * [create_animal](docs/sdks/animals/README.md#create_animal) - create an animal
 * [create_living_things](docs/sdks/animals/README.md#create_living_things) - create a living thing
@@ -48,7 +48,7 @@ if res.animals is not None:
 * [get_animals_by_id](docs/sdks/animals/README.md#get_animals_by_id) - Get Animal
 * [update_animals_by_id](docs/sdks/animals/README.md#update_animals_by_id) - Update Animal
 
-### [.birds](docs/sdks/birds/README.md)
+### [birds](docs/sdks/birds/README.md)
 
 * [create_living_things](docs/sdks/birds/README.md#create_living_things) - create a living thing
 * [create_new_bird](docs/sdks/birds/README.md#create_new_bird) - Create new Bird
@@ -79,7 +79,12 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 
 ## Example
@@ -104,9 +109,11 @@ res = None
 try:
     res = s.animals.create_animal(req)
 
-
-except (Error) as e:
+except (errors.Error) as e:
     print(e) # handle exception
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
 
 if res.animals is not None:
     # handle response
@@ -192,7 +199,7 @@ if res.animals is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import pb
@@ -207,12 +214,11 @@ s = pb.Pb(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name         | Type         | Scheme       |
 | ------------ | ------------ | ------------ |
