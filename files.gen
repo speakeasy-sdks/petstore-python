@@ -9,6 +9,7 @@ src/pb/utils/__init__.py
 src/pb/utils/retries.py
 src/pb/utils/utils.py
 src/pb/models/errors/sdkerror.py
+tests/helpers.py
 src/pb/models/operations/create_animal.py
 src/pb/models/operations/create_living_things.py
 src/pb/models/operations/delete_animals_by_id.py

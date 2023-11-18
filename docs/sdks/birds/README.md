@@ -33,13 +33,13 @@ req = shared.ComplexObject(
         animal=[
             shared.Animals(),
         ],
-        [
-            'string',
-        ],
-    'string',
-    3824.71,
+        birds=[
+        'string',
+    ],
+        created_date='string',
+        updated_date=3824.71,
     ),
-    shared.Pagination(),
+    meta=shared.Pagination(),
 )
 
 res = s.birds.create_living_things(req)
