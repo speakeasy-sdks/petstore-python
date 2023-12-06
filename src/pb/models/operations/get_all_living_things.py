@@ -13,7 +13,7 @@ from typing import Any, List, Optional, Union
 
 @dataclasses.dataclass
 class GetAllLivingThingsRequest:
-    filter: Optional[List[Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
+    filter_: Optional[List[Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
     r"""include all filters"""
     
 

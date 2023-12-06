@@ -185,7 +185,7 @@ s = pb.Pb(
 )
 
 req = operations.GetAllLivingThingsRequest(
-    filter=[
+    filter_=[
         'string',
     ],
 )
