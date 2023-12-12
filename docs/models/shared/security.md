@@ -3,6 +3,6 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        | Example            |
-| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `key1`             | *str*              | :heavy_check_mark: | N/A                |                    |
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `key1`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |

@@ -27,7 +27,7 @@ from pb.models import operations, shared
 
 s = pb.Pb(
     security=shared.Security(
-        key1="",
+        key1="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -73,7 +73,7 @@ from pb.models import shared
 
 s = pb.Pb(
     security=shared.Security(
-        key1="",
+        key1="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -127,7 +127,7 @@ from pb.models import operations, shared
 
 s = pb.Pb(
     security=shared.Security(
-        key1="",
+        key1="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -171,7 +171,7 @@ from pb.models import operations, shared
 
 s = pb.Pb(
     security=shared.Security(
-        key1="",
+        key1="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -213,7 +213,7 @@ from pb.models import operations, shared
 
 s = pb.Pb(
     security=shared.Security(
-        key1="",
+        key1="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -258,7 +258,7 @@ from pb.models import operations, shared
 
 s = pb.Pb(
     security=shared.Security(
-        key1="",
+        key1="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 
@@ -303,7 +303,7 @@ from pb.models import operations, shared
 
 s = pb.Pb(
     security=shared.Security(
-        key1="",
+        key1="Bearer <YOUR_ACCESS_TOKEN_HERE>",
     ),
 )
 

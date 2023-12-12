@@ -14,7 +14,7 @@ class Animals:
         
     
     
-    def create_animal(self, request: operations.CreateAnimalRequestBody) -> operations.CreateAnimalResponse:
+    def create_animal(self, request: Optional[operations.CreateAnimalRequestBody]) -> operations.CreateAnimalResponse:
         r"""create an animal
         Post animals description
         """
@@ -22,7 +22,7 @@ class Animals:
         
         url = base_url + '/animals'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.CreateAnimalRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -58,7 +58,7 @@ class Animals:
 
     
     
-    def create_living_things(self, request: shared.ComplexObject) -> operations.CreateLivingThingsResponse:
+    def create_living_things(self, request: Optional[shared.ComplexObject]) -> operations.CreateLivingThingsResponse:
         r"""create a living thing
         Create a living thing
         """
@@ -66,7 +66,7 @@ class Animals:
         
         url = base_url + '/living-things'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.ComplexObject], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -224,7 +224,7 @@ class Animals:
         
         url = utils.generate_url(operations.GetAnimalsByIDRequest, base_url, '/animals/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "animals", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetAnimalsByIDRequest, "animals", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.GetAnimalsByIDRequest, request)
@@ -269,7 +269,7 @@ class Animals:
         
         url = utils.generate_url(operations.UpdateAnimalsByIDRequest, base_url, '/animals/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "animals", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateAnimalsByIDRequest, "animals", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

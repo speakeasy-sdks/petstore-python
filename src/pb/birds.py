@@ -14,7 +14,7 @@ class Birds:
         
     
     
-    def create_living_things(self, request: shared.ComplexObject) -> operations.CreateLivingThingsResponse:
+    def create_living_things(self, request: Optional[shared.ComplexObject]) -> operations.CreateLivingThingsResponse:
         r"""create a living thing
         Create a living thing
         """
@@ -22,7 +22,7 @@ class Birds:
         
         url = base_url + '/living-things'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.ComplexObject], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -58,7 +58,7 @@ class Birds:
 
     
     
-    def create_new_bird(self, request: shared.NestedBird) -> operations.CreateNewBirdResponse:
+    def create_new_bird(self, request: Optional[shared.NestedBird]) -> operations.CreateNewBirdResponse:
         r"""Create new Bird
         Create a new Bird
         """
@@ -66,7 +66,7 @@ class Birds:
         
         url = base_url + '/birds'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.NestedBird], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -95,7 +95,7 @@ class Birds:
 
     
     
-    def get_all_birds(self, request: List[shared.Birds]) -> operations.GetAllBirdsResponse:
+    def get_all_birds(self, request: Optional[List[shared.Birds]]) -> operations.GetAllBirdsResponse:
         r"""Get Birds
         Get All birds
         """
@@ -103,7 +103,7 @@ class Birds:
         
         url = base_url + '/birds'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[List[shared.Birds]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
