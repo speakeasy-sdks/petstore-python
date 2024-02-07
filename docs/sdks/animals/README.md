@@ -263,8 +263,8 @@ s = pb.Pb(
 )
 
 req = operations.GetAnimalsByIDRequest(
-    animals=shared.Animals(),
     id='<ID>',
+    animals=shared.Animals(),
 )
 
 res = s.animals.get_animals_by_id(req)
@@ -308,8 +308,8 @@ s = pb.Pb(
 )
 
 req = operations.UpdateAnimalsByIDRequest(
-    animals=shared.Animals(),
     id='<ID>',
+    animals=shared.Animals(),
 )
 
 res = s.animals.update_animals_by_id(req)
