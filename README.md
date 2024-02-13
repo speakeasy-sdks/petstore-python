@@ -78,7 +78,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import pb
-from pb.models import operations, shared
+from pb.models import errors, operations, shared
 
 s = pb.Pb(
     security=shared.Security(
@@ -96,10 +96,10 @@ res = None
 try:
     res = s.animals.create_animal(req)
 except errors.Error as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.animals is not None:

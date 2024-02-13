@@ -77,19 +77,7 @@ s = pb.Pb(
     ),
 )
 
-req = shared.ComplexObject(
-    data=shared.Data(
-        animal=[
-            shared.Animals(),
-        ],
-        birds=[
-        'string',
-    ],
-        created_date='string',
-        updated_date=3824.71,
-    ),
-    meta=shared.Pagination(),
-)
+req = shared.ComplexObject()
 
 res = s.animals.create_living_things(req)
 
@@ -217,11 +205,7 @@ s = pb.Pb(
     ),
 )
 
-req = operations.GetAllLivingThingsRequest(
-    filter_=[
-        'string',
-    ],
-)
+req = operations.GetAllLivingThingsRequest()
 
 res = s.animals.get_all_living_things(req)
 
@@ -264,7 +248,6 @@ s = pb.Pb(
 
 req = operations.GetAnimalsByIDRequest(
     id='<ID>',
-    animals=shared.Animals(),
 )
 
 res = s.animals.get_animals_by_id(req)
@@ -309,7 +292,6 @@ s = pb.Pb(
 
 req = operations.UpdateAnimalsByIDRequest(
     id='<ID>',
-    animals=shared.Animals(),
 )
 
 res = s.animals.update_animals_by_id(req)

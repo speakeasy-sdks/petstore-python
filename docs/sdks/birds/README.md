@@ -28,19 +28,7 @@ s = pb.Pb(
     ),
 )
 
-req = shared.ComplexObject(
-    data=shared.Data(
-        animal=[
-            shared.Animals(),
-        ],
-        birds=[
-        'string',
-    ],
-        created_date='string',
-        updated_date=3824.71,
-    ),
-    meta=shared.Pagination(),
-)
+req = shared.ComplexObject()
 
 res = s.birds.create_living_things(req)
 
@@ -82,24 +70,7 @@ s = pb.Pb(
     ),
 )
 
-req = shared.NestedBird(
-    age=shared.Age(
-        unit=shared.Unit.YEARS,
-    ),
-    flight=shared.Flight(
-        wings=shared.Wings(
-            span=shared.Span(),
-        ),
-    ),
-    food=[
-        'string',
-    ],
-    location=[
-        shared.Location(
-            geography=shared.Geography(),
-        ),
-    ],
-)
+req = shared.NestedBird()
 
 res = s.birds.create_new_bird(req)
 
@@ -184,11 +155,7 @@ s = pb.Pb(
     ),
 )
 
-req = operations.GetAllLivingThingsRequest(
-    filter_=[
-        'string',
-    ],
-)
+req = operations.GetAllLivingThingsRequest()
 
 res = s.birds.get_all_living_things(req)
 
