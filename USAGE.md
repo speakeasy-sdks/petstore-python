@@ -11,8 +11,8 @@ s = pb.Pb(
 
 req = operations.CreateAnimalRequestBody(
     color='white',
-    id='<ID>',
-    name='string',
+    id='<id>',
+    name='<value>',
 )
 
 res = s.animals.create_animal(req)

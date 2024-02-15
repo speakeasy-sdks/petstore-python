@@ -33,8 +33,8 @@ s = pb.Pb(
 
 req = operations.CreateAnimalRequestBody(
     color='white',
-    id='<ID>',
-    name='string',
+    id='<id>',
+    name='<value>',
 )
 
 res = s.animals.create_animal(req)
@@ -120,7 +120,7 @@ s = pb.Pb(
 )
 
 req = operations.DeleteAnimalsByIDRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.animals.delete_animals_by_id(req)
@@ -247,7 +247,7 @@ s = pb.Pb(
 )
 
 req = operations.GetAnimalsByIDRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.animals.get_animals_by_id(req)
@@ -291,7 +291,7 @@ s = pb.Pb(
 )
 
 req = operations.UpdateAnimalsByIDRequest(
-    id='<ID>',
+    id='<id>',
 )
 
 res = s.animals.update_animals_by_id(req)
