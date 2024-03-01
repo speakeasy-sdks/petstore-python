@@ -4,17 +4,17 @@ management:
   docChecksum: 2554149823bfd7b4f9664a81d29a1aea
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.258.2
-  releaseVersion: 5.0.1
-  configChecksum: 0d28ee0f854fc99574826afc043603f0
+  generationVersion: 2.275.4
+  releaseVersion: 5.1.0
+  configChecksum: 24c221c7337477e11244ebbe2567f4e3
   repoURL: https://github.com/speakeasy-sdks/petstore-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/petstore-python.git
 features:
   python:
-    core: 4.4.6
+    core: 4.5.0
     getRequestBodies: 2.81.1
-    globalSecurity: 2.83.2
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     unions: 2.82.5
 generatedFiles:
@@ -102,3 +102,6 @@ generatedFiles:
   - docs/sdks/birds/README.md
   - USAGE.md
   - .gitattributes
+  - src/pb/_hooks/sdkhooks.py
+  - src/pb/_hooks/types.py
+  - src/pb/_hooks/__init__.py
