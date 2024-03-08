@@ -35,6 +35,7 @@ res = s.birds.create_living_things(req)
 if res.complex_object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -77,6 +78,7 @@ res = s.birds.create_new_bird(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -120,6 +122,7 @@ res = s.birds.get_all_birds(req)
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -162,6 +165,7 @@ res = s.birds.get_all_living_things(req)
 if res.one_of is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -42,6 +42,7 @@ res = s.animals.create_animal(req)
 if res.animals is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -84,6 +85,7 @@ res = s.animals.create_living_things(req)
 if res.complex_object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -125,9 +127,10 @@ req = operations.DeleteAnimalsByIDRequest(
 
 res = s.animals.delete_animals_by_id(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -170,6 +173,7 @@ res = s.animals.get_all_animals(req)
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -212,6 +216,7 @@ res = s.animals.get_all_living_things(req)
 if res.one_of is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -255,6 +260,7 @@ res = s.animals.get_animals_by_id(req)
 if res.animals is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -299,6 +305,7 @@ res = s.animals.update_animals_by_id(req)
 if res.animals is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

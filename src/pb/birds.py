@@ -24,23 +24,23 @@ class Birds:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/living-things'
-        headers = {}
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.ComplexObject], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -57,25 +57,27 @@ class Birds:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.CreateLivingThingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateLivingThingsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ComplexObject])
                 res.complex_object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.Error)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -89,23 +91,23 @@ class Birds:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/birds'
-        headers = {}
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.NestedBird], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -122,18 +124,20 @@ class Birds:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.CreateNewBirdResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateNewBirdResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateNewBirdResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -147,23 +151,23 @@ class Birds:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/birds'
-        headers = {}
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, Optional[List[shared.Birds]], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -180,25 +184,27 @@ class Birds:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAllBirdsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAllBirdsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.Birds]])
                 res.classes = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.Error)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -212,16 +218,16 @@ class Birds:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/living-things'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetAllLivingThingsRequest, request)
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        query_params = { **utils.get_query_params(operations.GetAllLivingThingsRequest, request), **query_params }
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -243,18 +249,20 @@ class Birds:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAllLivingThingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAllLivingThingsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[Union[operations.One, operations.Two]])
                 res.one_of = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
