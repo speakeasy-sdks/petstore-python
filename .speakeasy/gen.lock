@@ -3,18 +3,18 @@ id: f3f684cb-2f69-436b-bad1-6d4fc2bacd9b
 management:
   docChecksum: 2554149823bfd7b4f9664a81d29a1aea
   docVersion: "1.0"
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 5.2.1
-  configChecksum: 08a4ffc96d16454290ed0c5a0596cf69
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 5.2.2
+  configChecksum: a84460447fc6ee24ac0eb7061d9459f4
   repoURL: https://github.com/speakeasy-sdks/petstore-python.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/petstore-python.git
 features:
   python:
-    core: 4.5.1
+    core: 4.5.2
     getRequestBodies: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
     unions: 2.82.6
