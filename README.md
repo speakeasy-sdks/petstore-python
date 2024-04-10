@@ -73,7 +73,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 500              | application/json |
-| errors.SDKError  | 4x-5xx           | */*              |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ### Example
 
@@ -195,7 +195,7 @@ import requests
 
 http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
-s = pb.Pb(client: http_client)
+s = pb.Pb(client=http_client)
 ```
 <!-- End Custom HTTP Client [http-client] -->
 

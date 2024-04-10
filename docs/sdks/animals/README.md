@@ -60,7 +60,7 @@ if res.animals is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 500              | application/json |
-| errors.SDKError  | 4x-5xx           | */*              |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## create_living_things
 
@@ -103,7 +103,7 @@ if res.complex_object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 500              | application/json |
-| errors.SDKError  | 4x-5xx           | */*              |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## delete_animals_by_id
 
@@ -148,7 +148,7 @@ if res is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 500              | application/json |
-| errors.SDKError  | 4x-5xx           | */*              |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## get_all_animals
 
@@ -191,7 +191,7 @@ if res.classes is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 500              | application/json |
-| errors.SDKError  | 4x-5xx           | */*              |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## get_all_living_things
 
@@ -233,7 +233,7 @@ if res.one_of is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_animals_by_id
 
@@ -278,7 +278,7 @@ if res.animals is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 500              | application/json |
-| errors.SDKError  | 4x-5xx           | */*              |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## update_animals_by_id
 
@@ -323,4 +323,4 @@ if res.animals is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 500              | application/json |
-| errors.SDKError  | 4x-5xx           | */*              |
+| errors.SDKError  | 4xx-5xx          | */*              |
